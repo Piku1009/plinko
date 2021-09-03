@@ -9,6 +9,21 @@ function setup() {
 
   ground = new Ground(width/2,790,width,10);
   
+  for(var k = 0;k<=width;k=k+80){
+    divisions.push(new Division(k,height-divisionHeight/2,10,divisionHeight));
+}
+for(var j = 40;j<=width;j = j + 50){
+  plinkos.push(new Plinko(j,75));
+}
+for(var j = 40;j<=width;j = j + 50){
+  plinkos.push(new Plinko(j,175));
+}
+for(var j = 40;j<=width;j = j + 50){
+  plinkos.push(new Plinko(j,275));
+}
+for(var j = 40;j<=width;j = j + 50){
+  plinkos.push(new Plinko(j,375));
+}
 }
 var particles = [];
 var plinkos = [];
@@ -18,21 +33,6 @@ function draw() {
   background("black"); 
   Engine.update(engine);
 
-  for(var k = 0;k<=width;k=k+80){
-      divisions.push(new Division(k,height-divisionHeight/2,10,divisionHeight));
-  }
-  for(var j = 40;j<=width;j = j + 50){
-    plinkos.push(new Plinko(j,75));
-  }
-  for(var j = 40;j<=width;j = j + 50){
-    plinkos.push(new Plinko(j,175));
-  }
-  for(var j = 40;j<=width;j = j + 50){
-    plinkos.push(new Plinko(j,275));
-  }
-  for(var j = 40;j<=width;j = j + 50){
-    plinkos.push(new Plinko(j,375));
-  }
   if(frameCount%60===0){
     particles.push(new Particle(random(width/2-10,width/2+10),10,10));
   }
